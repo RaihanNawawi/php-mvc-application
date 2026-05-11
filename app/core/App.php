@@ -2,8 +2,16 @@
 
 class App {
     public function __construct() {
-        // Mengecek apapun yang dikirim melalui URL
-        // Misal http://localhost/phpmvc/public/?url=inidariuser
-       var_dump($_GET); // akan menampilkan array dengan key url dan value "inidariuser"
+        $url = $this->parseURL();
+        var_dump($url); // akan tampil data yang dikirimkan melalui url, contoh: ?url=home , maka akan tampil string "home"
+    }
+
+    public function parseURL() {
+        // cek apakah ada data yang dikirimkan melalui url dengan key "url"
+        if ( isset($_GET['url']) ) {
+            $url = $_GET['url'];
+            return $url;
+        }
+        return 'home';
     }
 }
