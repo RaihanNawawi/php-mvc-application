@@ -1,2 +1,5 @@
 <!-- Set welcome.php as the default page -->
 DirectoryIndex welcome.php
+
+<!-- Menonaktifkan fitur pencarian file otomatis berdasarkan nama mirip. dan pencarian dilakukan melalui router aplikasi  -->
+Options -MultiViews
