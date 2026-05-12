@@ -9,7 +9,7 @@ class App {
     public function parseURL() {
         // cek apakah ada data yang dikirimkan melalui url dengan key "url"
         if ( isset($_GET['url']) ) {
-            $url = $_GET['url'];
+            $url = rtrim($_GET['url'], '/'); // menghapus karakter "/" di akhir string
             return $url;
         }
         return 'home';
