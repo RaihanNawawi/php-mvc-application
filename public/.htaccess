@@ -1,0 +1,2 @@
+<!-- Set welcome.php as the default page -->
+DirectoryIndex welcome.php
