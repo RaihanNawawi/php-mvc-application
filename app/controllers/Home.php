@@ -5,8 +5,8 @@ class Home {
     public function index() {
         echo "Home/index";
     }
-    // method test akan dijalankan ketika controller home dipanggil dengan method test, contoh: ?url=home/test
-    public function test() {
-        echo "Home/test";
+    // method profile akan dijalankan ketika controller home dipanggil dengan method profile, contoh: ?url=home/profile
+    public function profile($nama = 'User', $pekerjaan = 'Pekerjaan') {
+        echo "Halo, nama saya adalah " . strtoupper($nama) . " dan saya adalah seorang " . strtoupper($pekerjaan);
     }
 }
