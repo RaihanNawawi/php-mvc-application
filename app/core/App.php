@@ -7,7 +7,13 @@ class App {
 
     public function __construct() {
         $url = $this->parseURL();
-        
+        // cek apakah file controller yang dipanggil ada di folder controllers, jika ada maka controller akan diubah sesuai dengan url yang dipanggil
+        if ( file_exists('../app/controllers/' . $url[0] . '.php') ) {
+            $this->controller = $url[0];
+            unset($url[0]);
+        }
+        require_once '../app/controllers/' . $this->controller . '.php';
+        $this->controller = new $this->controller;
     }
 
     public function parseURL() {
