@@ -1,9 +1,12 @@
 <?php
 
 class App {
+    protected $controller = 'home';
+    protected $method = 'index';
+    protected $params = [];
+    
     public function __construct() {
         $url = $this->parseURL();
-        var_dump($url); // akan tampil data yang dikirimkan melalui url, contoh: ?url=home , maka akan tampil string "home"
     }
 
     public function parseURL() {
