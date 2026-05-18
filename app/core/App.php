@@ -8,7 +8,7 @@ class App {
     public function __construct() {
         $url = $this->parseURL();
         // Controller Logic
-        if ( file_exists('../app/controllers/' . $url[0] . '.php') ) {
+        if ( isset($url[0]) && file_exists('../app/controllers/' . $url[0] . '.php') ) {
             $this->controller = $url[0];
             unset($url[0]);
         }
@@ -39,6 +39,6 @@ class App {
             $url = explode('/', $url); // memecah string menjadi array berdasarkan karakter "/"
             return $url;
         }
-        return 'home';
+        return [];
     }
 }
