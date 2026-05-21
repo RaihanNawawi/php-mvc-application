@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $data['judul'] ?? 'Default'; ?> Page</title>
     <!-- Bootstrap CSS -->
-    <link href="http://localhost/phpmvc/public/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="<?= BASE_URL ?>/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-secondary">
