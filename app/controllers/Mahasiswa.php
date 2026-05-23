@@ -3,7 +3,8 @@
 class Mahasiswa extends Controller {
     public function index() {
         $this->view('templates/header', ['judul' => 'Mahasiswa']);
-        $this->view('mahasiswa/index');
+        $data['mhs'] = $this->model('Mahasiswa_model')->getAllMahasiswa();
+        $this->view('mahasiswa/index', $data);
         $this->view('templates/footer');
     }
 }

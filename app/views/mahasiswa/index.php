@@ -1,3 +1,7 @@
+<?php
+// memberi tahu Intelephense bahwa: $data memang ada dan bertipe array.
+/** @var array $data */
+?>
 <div class="container mt-4">
     <div class="card">
         <div class="card-body">
@@ -13,15 +17,17 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php $i = 1; foreach ($data['mhs'] as $mhs): ?>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Rizky</td>
-                        <td>123456789</td>
+                        <th scope="row"><?= $i++; ?></th>
+                        <td><?= $mhs['nama']; ?></td>
+                        <td><?= $mhs['nrp']; ?></td>
                         <td>
-                            rizky@example.com
+                            <?= $mhs['email']; ?>
                         </td>
-                        <td>Teknik Informatika</td>
+                        <td><?= $mhs['jurusan']; ?></td>
                     </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
