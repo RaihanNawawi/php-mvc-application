@@ -14,6 +14,7 @@
                         <th scope="col">NIM</th>
                         <th scope="col">Email</th>
                         <th scope="col">Jurusan</th>
+                        <th scope="col">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,6 +27,9 @@
                             <?= $mhs['email']; ?>
                         </td>
                         <td><?= $mhs['jurusan']; ?></td>
+                        <td>
+                            <a href="<?= BASE_URL; ?>/mahasiswa/detail/<?= $mhs['id']; ?>" class="btn btn-info btn-sm">Detail</a>
+                        </td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
