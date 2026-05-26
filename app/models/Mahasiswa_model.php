@@ -15,4 +15,11 @@ class Mahasiswa_model
         $this->dbh->query('SELECT * FROM ' . $this->table); // Menyiapkan query untuk mengambil semua data mahasiswa
         return $this->dbh->resultSet();
     }
+
+    public function getMahasiswaById($id)
+    {
+        $this->dbh->query('SELECT * FROM ' . $this->table . ' WHERE id = :id'); // Menyiapkan query untuk mengambil data mahasiswa berdasarkan ID
+        $this->dbh->bind('id', $id); // Mengikat parameter ID ke query
+        return $this->dbh->single(); // Mengembalikan hasil sebagai satu data mahasiswa
+    }   
 }
