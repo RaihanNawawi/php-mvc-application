@@ -62,4 +62,18 @@ class Database {
     {
         return $this->stmt->execute();
     }
+
+    // Ambil semua data
+    public function resultSet()
+    {
+        $this->execute();
+        return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    // Ambil satu data
+    public function single()
+    {
+        $this->execute();
+        return $this->stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }
