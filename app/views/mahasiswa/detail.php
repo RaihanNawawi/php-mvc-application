@@ -23,5 +23,8 @@
   <input type="text" class="form-control disabled" placeholder="<?= $data['mhs']['jurusan']; ?>" aria-label="Username" aria-describedby="basic-addon1">
 </div>
   </div>
+  <div class="card-footer text-muted">
+    <a href="<?= BASE_URL; ?>/mahasiswa" class="btn btn-secondary">&laquo; Kembali</a>
+  </div>
 </div>
 </div>
