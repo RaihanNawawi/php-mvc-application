@@ -21,5 +21,19 @@ class Mahasiswa_model
         $this->dbh->query('SELECT * FROM ' . $this->table . ' WHERE id = :id'); // Menyiapkan query untuk mengambil data mahasiswa berdasarkan ID
         $this->dbh->bind('id', $id); // Mengikat parameter ID ke query
         return $this->dbh->single(); // Mengembalikan hasil sebagai satu data mahasiswa
-    }   
+    }
+
+    public function tambahDataMahasiswa($data)
+    {
+        $query = "INSERT INTO " . $this->table . " VALUES ('', :nama, :nrp, :email, :jurusan)"; // Query untuk menambahkan data mahasiswa
+        $this->dbh->query($query); // Menyiapkan query
+        $this->dbh->bind('nama', $data['nama']); // Mengikat parameter nama
+        $this->dbh->bind('nrp', $data['nrp']); // Mengikat parameter NRP
+        $this->dbh->bind('email', $data['email']); // Mengikat parameter email
+        $this->dbh->bind('jurusan', $data['jurusan']); // Mengikat parameter jurusan
+
+        $this->dbh->execute(); // Menjalankan query
+
+        return $this->dbh->rowCount(); // Cek apakah ada baris yang terpengaruh (berhasil ditambahkan)
+    }
 }
