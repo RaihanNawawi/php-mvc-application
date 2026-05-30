@@ -76,4 +76,12 @@ class Database {
         $this->execute();
         return $this->stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    
+    // Cek jumlah baris yang terpengaruh
+    public function rowCount()
+    {
+        //  rowCount() ini adalah method dari PDOStatement yang mengembalikan jumlah baris yang terpengaruh oleh query terakhir yang dieksekusi.
+        return $this->stmt->rowCount();
+    }
 }
