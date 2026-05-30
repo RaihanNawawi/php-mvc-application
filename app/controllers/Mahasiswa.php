@@ -16,6 +16,10 @@ class Mahasiswa extends Controller {
     }
 
     public function tambah() {
-        var_dump($_POST);
+        // Jika ada baris baru ditambahkan, maka kembalikan ke halaman index (mahasiswa)
+        if ($this->model('Mahasiswa_model')->tambahDataMahasiswa($_POST) > 0) {
+            header('Location: ' . BASE_URL . '/mahasiswa');
+            exit;
+        }
     }
 }
