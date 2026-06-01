@@ -6,6 +6,10 @@
     <div class="card">
         <div class="card-body">
             <div class="row">
+                <!-- Menampilkan flash message -->
+                <div class="col-md-12">
+                    <?php Flasher::flash(); ?>
+                </div>
                 <div class="col-md-6">
                     <h2 class="pb-2">Daftar Mahasiswa</h2>
                 </div>
