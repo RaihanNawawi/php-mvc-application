@@ -25,16 +25,15 @@ class Mahasiswa_model
 
     public function tambahDataMahasiswa($data)
     {
-    //     $query = "INSERT INTO " . $this->table . " VALUES ('', :nama, :nrp, :email, :jurusan)"; // Query untuk menambahkan data mahasiswa
-    //     $this->dbh->query($query); // Menyiapkan query
-    //     $this->dbh->bind('nama', $data['nama']); // Mengikat parameter nama
-    //     $this->dbh->bind('nrp', $data['nrp']); // Mengikat parameter NRP
-    //     $this->dbh->bind('email', $data['email']); // Mengikat parameter email
-    //     $this->dbh->bind('jurusan', $data['jurusan']); // Mengikat parameter jurusan
+        $query = "INSERT INTO " . $this->table . " VALUES ('', :nama, :nrp, :email, :jurusan)"; // Query untuk menambahkan data mahasiswa
+        $this->dbh->query($query); // Menyiapkan query
+        $this->dbh->bind('nama', $data['nama']); // Mengikat parameter nama
+        $this->dbh->bind('nrp', $data['nrp']); // Mengikat parameter NRP
+        $this->dbh->bind('email', $data['email']); // Mengikat parameter email
+        $this->dbh->bind('jurusan', $data['jurusan']); // Mengikat parameter jurusan
 
-    //     $this->dbh->execute(); // Menjalankan query
+        $this->dbh->execute(); // Menjalankan query
 
-    //     return $this->dbh->rowCount(); // Cek apakah ada baris yang terpengaruh (berhasil ditambahkan)
-     
+        return $this->dbh->rowCount(); // Cek apakah ada baris yang terpengaruh (berhasil ditambahkan)
     }
 }
