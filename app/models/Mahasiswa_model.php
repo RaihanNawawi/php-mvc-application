@@ -36,4 +36,14 @@ class Mahasiswa_model
 
         return $this->dbh->rowCount(); // Cek apakah ada baris yang terpengaruh (berhasil ditambahkan)
     }
+
+    public function hapusDataMahasiswa($id)
+    {
+        $query = "DELETE FROM " . $this->table . " WHERE id = :id"; // Query untuk menghapus data mahasiswa berdasarkan ID
+        $this->dbh->query($query); // Menyiapkan query
+        $this->dbh->bind('id', $id); // Mengikat parameter ID
+        
+        $this->dbh->execute(); // Menjalankan query
+        return $this->dbh->rowCount(); // Cek apakah ada baris yang terpengaruh (berhasil dihapus)
+    }
 }
