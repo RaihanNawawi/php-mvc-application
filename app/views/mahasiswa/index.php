@@ -42,7 +42,8 @@
                         </td>
                         <td><?= $mhs['jurusan']; ?></td>
                         <td>
-                            <a href="<?= BASE_URL; ?>/mahasiswa/detail/<?= $mhs['id']; ?>" class="btn btn-info btn-sm">Detail</a>
+                            <a href="<?= BASE_URL; ?>/mahasiswa/detail/<?= $mhs['id']; ?>" class="btn btn-secondary btn-sm">Detail</a>
+                            <a href="<?= BASE_URL; ?>/mahasiswa/hapus/<?= $mhs['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
                         </td>
                     </tr>
                     <?php endforeach; ?>
