@@ -39,4 +39,11 @@ class Mahasiswa extends Controller {
             exit;
         }
     }
+    
+    public function edit($id) {
+        $this->view('templates/header', ['judul' => 'Edit Mahasiswa']);
+        $data['mhs'] = $this->model('Mahasiswa_model')->getMahasiswaById($id);
+        $this->view('mahasiswa/edit', $data);
+        $this->view('templates/footer');
+    }
 }
