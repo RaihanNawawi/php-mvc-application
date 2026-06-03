@@ -46,4 +46,16 @@ class Mahasiswa extends Controller {
         $this->view('mahasiswa/edit', $data);
         $this->view('templates/footer');
     }
+
+    public function update($id) {
+        if ($this->model('Mahasiswa_model')->updateDataMahasiswa($id, $_POST) > 0) {
+            Flasher::setFlash('berhasil', 'diupdate', 'success');
+            header('Location: ' . BASE_URL . '/mahasiswa');
+            exit;
+        } else {
+            Flasher::setFlash('gagal', 'diupdate', 'danger');
+            header('Location: ' . BASE_URL . '/mahasiswa');
+            exit;
+        }
+    }
 }
