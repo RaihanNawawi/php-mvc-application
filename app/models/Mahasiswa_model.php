@@ -46,4 +46,17 @@ class Mahasiswa_model
         $this->dbh->execute(); // Menjalankan query
         return $this->dbh->rowCount(); // Cek apakah ada baris yang terpengaruh (berhasil dihapus)
     }
+
+    public function updateDataMahasiswa($id, $data)
+    {
+        $query = "UPDATE " . $this->table . " SET nama = :nama, nrp = :nrp, email = :email, jurusan = :jurusan WHERE id = :id"; // Query untuk mengupdate data mahasiswa berdasarkan ID
+        $this->dbh->query($query); // Menyiapkan query
+        $this->dbh->bind('nama', $data['nama']); // Mengikat parameter nama
+        $this->dbh->bind('nrp', $data['nrp']); // Mengikat parameter NRP
+        $this->dbh->bind('email', $data['email']); // Mengikat parameter email
+        $this->dbh->bind('jurusan', $data['jurusan']); // Mengikat parameter jurusan
+        $this->dbh->bind('id', $id); // Mengikat parameter ID
+        $this->dbh->execute(); // Menjalankan query
+        return $this->dbh->rowCount(); // Cek apakah ada baris yang terpengaruh (berhasil diupdate)
+    }
 }
