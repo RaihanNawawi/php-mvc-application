@@ -10,10 +10,18 @@
                 <div class="col-md-12">
                     <?php Flasher::flash(); ?>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <h2 class="pb-2">Daftar Mahasiswa</h2>
                 </div>
-                <div class="col-md-6 text-end">
+                <div class="col-md-4">
+                    <form action="<?= BASE_URL; ?>/mahasiswa/cari" method="post">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Cari mahasiswa..." name="keyword" id="keyword" autocomplete="off">
+                            <button class="btn btn-primary" type="submit" id="tombolCari">Cari</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4 text-end">
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal">
                        + Tambah Data
