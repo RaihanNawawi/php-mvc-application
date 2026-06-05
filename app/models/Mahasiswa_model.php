@@ -59,4 +59,13 @@ class Mahasiswa_model
         $this->dbh->execute(); // Menjalankan query
         return $this->dbh->rowCount(); // Cek apakah ada baris yang terpengaruh (berhasil diupdate)
     }
+
+    public function cariDataMahasiswa()
+    {
+        $keyword = $_POST['keyword']; // Mengambil keyword dari form pencarian
+        $query = "SELECT * FROM " . $this->table . " WHERE nama LIKE :keyword OR nrp LIKE :keyword OR email LIKE :keyword OR jurusan LIKE :keyword"; // Query untuk mencari data mahasiswa berdasarkan keyword
+        $this->dbh->query($query); // Menyiapkan query
+        $this->dbh->bind('keyword', "%$keyword%"); // Mengikat parameter keyword dengan wildcard untuk pencarian
+        return $this->dbh->resultSet(); // Mengembalikan hasil pencarian sebagai array of mahasiswa
+    }
 }
